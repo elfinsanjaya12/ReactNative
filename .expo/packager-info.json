@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 30560,
+  "expoServerNgrokUrl": "https://ai-eph.anonymous.my-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.ai-eph.anonymous.my-app.exp.direct",
+  "ngrokPid": 30629,
+  "webpackServerPort": null
+}
