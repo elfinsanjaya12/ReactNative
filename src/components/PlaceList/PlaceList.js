@@ -8,7 +8,7 @@ const placeList = props => {
     <ListItem
       key={i}
       placeName={place}
-      onItemPressed={() => alert("Item pressed -ID " + i)}
+      onItemPressed={() => props.onItemDeleted(i)}
     />
   ));
   return <View style={styles.listContainer}>{placesOutput}</View>;

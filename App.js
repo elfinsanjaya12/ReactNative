@@ -10,7 +10,7 @@ export default class App extends React.Component {
     places: [] //tempat
   };
 
-  /* this function _placeAddedHandler */
+  /* this function create _placeAddedHandler */
   _placeAddedHandler = placeName => {
     this.setState(prevState => {
       return {
@@ -20,11 +20,24 @@ export default class App extends React.Component {
     });
   };
 
+  /* this function delete _placeDeletedHandler*/
+  _placeDeleteHandler = index => {
+    this.setState(prevState => {
+      return {
+        places: prevState.places.filter((place, i) => {
+          return i !== index;
+        })
+      };
+    });
+  };
   render() {
     return (
       <View style={styles.container}>
         <PlaceInput onPlaceAdded={this._placeAddedHandler} />
-        <PlaceList places={this.state.places} />
+        <PlaceList
+          places={this.state.places}
+          onItemDeleted={this._placeDeleteHandler}
+        />
       </View>
     );
   }
