@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 19397,
-  "expoServerNgrokUrl": "https://ai-eph.anonymous.my-app.exp.direct",
-  "packagerNgrokUrl": "https://packager.ai-eph.anonymous.my-app.exp.direct",
-  "ngrokPid": 19464,
+  "packagerPid": 6018,
+  "expoServerNgrokUrl": "https://8z-m2q.anonymous.my-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.8z-m2q.anonymous.my-app.exp.direct",
+  "ngrokPid": 6084,
   "webpackServerPort": null
 }

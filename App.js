@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 // import ListItem from "./src/components/ListItem/ListItem";
 import PlaceInput from "./src/components/PlaceInput/PlaceInput";
 import PlaceList from "./src/components/PlaceList/PlaceList";
+import PlaceImage from "./src/assets/beautiful-place.jpg";
+
 export default class App extends React.Component {
   state = {
     // placeName: "", //nama tempat
@@ -17,7 +19,8 @@ export default class App extends React.Component {
         // Fungsi concat() menggabungkan teks dari satu atau lebih string dan mengembalikanya menjadi sebuah string
         places: prevState.places.concat({
           key: Math.random(),
-          value: placeName
+          name: placeName,
+          image: PlaceImage
         })
       };
     });
