@@ -5,11 +5,13 @@ import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import PlaceInput from "./src/components/PlaceInput/PlaceInput";
 import PlaceList from "./src/components/PlaceList/PlaceList";
 import PlaceImage from "./src/assets/beautiful-place.jpg";
+import PlaceDetail from "./src/components/PlaceDetail/PlaceDetail";
 
 export default class App extends React.Component {
   state = {
     // placeName: "", //nama tempat
-    places: [] //tempat
+    places: [], //tempat
+    selectedPlace: null
   };
 
   /* this function create _placeAddedHandler */
@@ -20,7 +22,11 @@ export default class App extends React.Component {
         places: prevState.places.concat({
           key: Math.random(),
           name: placeName,
-          image: PlaceImage
+          // image: PlaceImage
+          image: {
+            uri:
+              "https://miro.medium.com/max/2400/1*eYd3xl0SWHGKRPl1KTDF7A.jpeg"
+          }
         })
       };
     });
@@ -36,13 +42,26 @@ export default class App extends React.Component {
       };
     });
   };
+
+  _placeSelectedHandler = key => {
+    this.setState(prevState => {
+      return {
+        selectedPlace: prevState.places.find(place => {
+          return place.key === key;
+        })
+      };
+    });
+  };
+
   render() {
     return (
       <View style={styles.container}>
+        <PlaceDetail selectedPlace={this.state.selectedPlace} />
+
         <PlaceInput onPlaceAdded={this._placeAddedHandler} />
         <PlaceList
           places={this.state.places}
-          onItemDeleted={this._placeDeleteHandler}
+          onItemSelected={this._placeSelectedHandler}
         />
       </View>
     );
